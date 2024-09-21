@@ -14,10 +14,7 @@
       }
       body {
         background-color: rgb(42, 47, 46);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        /* display: flex; */
       }
 
       #container {
@@ -43,14 +40,24 @@
 
         /* transform: translateX(-50%); */
       }
+
+      #timer {
+        text-align: center;
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: aqua;
+      }
     </style>
   </head>
   <body>
+    <div id="timer">00:00</div>
     <div id="mainTextContainer"></div>
     <div id="container"></div>
 
     <div id="tester"></div>
 
+    <script src="script/utilities.js"></script>
     <script src="script/script.js"></script>
   </body>
 </html>

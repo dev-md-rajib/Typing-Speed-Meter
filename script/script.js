@@ -1,9 +1,7 @@
 const container = document.getElementById("container");
 const wrongText = document.getElementById("wrong");
 const rightWrong = [];
-// pointer.style.width = "16px";
-// pointer.style.height = "16px";
-// pointer.style.borderBottom = "1px solid white";
+let timerState = false;
 
 const mainTextContainer = document.getElementById("mainTextContainer");
 const mainText = "MY NAME IS RAJIB I LIVE IN A VILLAGE I DO NOT LIKE FISH";
@@ -25,9 +23,6 @@ document.addEventListener("keyup", function (event) {
 
   if (pressed == "BACKSPACE") {
     if (childs.length > 0) {
-      if (childs[childs.length - 1].innerText != mainText[cur] && wrong > 0) {
-        wrong -= 1;
-      }
       container.removeChild(childs[childs.length - 1]);
       if (cur > 0) {
         cur -= 1;
@@ -35,6 +30,10 @@ document.addEventListener("keyup", function (event) {
       }
     }
   } else if (pressed.length == 1) {
+    if (!timerState) {
+      timerState = true;
+      timerId = setInterval(updateTimer, 1000);
+    }
     let toAdd = document.createElement("span");
     toAdd.innerText = mainText[cur];
     toAdd.style.color = "white";
@@ -60,15 +59,12 @@ document.addEventListener("keyup", function (event) {
         // spaceWrong.style.width = "6px";
         // spaceWrong.style.backgroundColor = "red";
         // toAdd = spaceWrong;
-        toAdd.innerText = " ";
         toAdd.style.backgroundColor = "red";
-        toAdd.style.display = "inline-block";
-        toAdd.style.height = "20px";
       } else {
         toAdd.style.color = "red";
 
         //   toAdd.style.backgroundColor = "red";
-        toAdd.innerText = mainText[cur];
+        //toAdd.innerText = mainText[cur];
       }
       rightWrong.push(1);
     }
