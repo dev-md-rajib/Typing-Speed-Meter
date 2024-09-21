@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 32px;
+      }
+      body {
+        background-color: rgb(42, 47, 46);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #container {
+        width: 100%;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.128);
+        color: white;
+      }
+
+      #mainTextContainer {
+        position: absolute;
+        box-sizing: border-box;
+
+        width: 100%;
+        height: 200px;
+        opacity: 0.5;
+        color: white;
+      }
+
+      .pointer {
+        font-size: 12px;
+        border-bottom: 1px solid white;
+
+        /* transform: translateX(-50%); */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainTextContainer"></div>
+    <div id="container"></div>
+
+    <div id="tester"></div>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
