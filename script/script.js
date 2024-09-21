@@ -1,10 +1,9 @@
 const container = document.getElementById("container");
 const wrongText = document.getElementById("wrong");
-const rightWrong = [];
 let timerState = false;
 
 const mainTextContainer = document.getElementById("mainTextContainer");
-const mainText = "MY NAME IS RAJIB I LIVE IN A VILLAGE I DO NOT LIKE FISH";
+
 const pointer = document.createElement("span");
 pointer.style.color = "cyan";
 pointer.innerText = mainText[0];
@@ -16,6 +15,9 @@ let total = mainText.length;
 let wrong = 0;
 
 document.addEventListener("keyup", function (event) {
+  if (!response) {
+    return;
+  }
   const pressed = event.key.toUpperCase();
   const childs = container.childNodes;
 
@@ -39,15 +41,9 @@ document.addEventListener("keyup", function (event) {
     toAdd.style.color = "white";
     if (pressed == mainText[cur]) {
       if (mainText[cur] == " ") {
-        // let spaceRight = document.createElement("div");
-        // spaceRight.style.width = "6px";
-        // spaceRight.style.height = "20px";
-        // spaceRight.style.display = "inline-block";
-        // spaceRight.style.backgroundColor = "green";
-        // toAdd = spaceRight;
-        toAdd.style.backgroundColor = "green";
+        // toAdd.style.backgroundColor = "green";
       } else {
-        toAdd.style.color = "green";
+        toAdd.style.color = "white";
       }
       rightWrong.push(0);
       //   toAdd.style.backgroundColor = "green";
@@ -59,7 +55,7 @@ document.addEventListener("keyup", function (event) {
         // spaceWrong.style.width = "6px";
         // spaceWrong.style.backgroundColor = "red";
         // toAdd = spaceWrong;
-        toAdd.style.backgroundColor = "red";
+        // toAdd.style.backgroundColor = "red";
       } else {
         toAdd.style.color = "red";
 
